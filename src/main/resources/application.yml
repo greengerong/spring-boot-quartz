@@ -5,9 +5,54 @@ spring:
   application:
     name: spring-boot-quartz
 
-
   jpa:
     database: MYSQL
     show-sql: true
-#quartz
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:3306/normal_spike
+    username: root
+    data-password: root
+    tomcat:
+      test-on-borrow: true
+      validation-query: select 1
+      connection-properties: autoReconnect=true;characterEncoding=utf8;characterSetResults=utf8;
+  freemarker:
+    cache: true
+    template-loader-path: classpath:/templates
+  jackson:
+    time-zone: Asia/Shanghai
+  messages:
+    basename: ValidationMessages
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: true
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    password: secretkey
+    property:
+      prefix: "ENC@["
+      suffix: "]"
+server:
+  port: 8080
+  context-path: /api
+
+
+
+management:
+  security:
+    enabled: false
+endpoints:
+  enabled: false
+  info:
+    enabled: true
+flyway:
+  locations: db/migration,dbmigration-mock
+
+
+
+#quartz:
 #  enabled: true
