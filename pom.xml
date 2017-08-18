@@ -30,6 +30,7 @@
         <jasypt-spring-boot-starter.version>1.14</jasypt-spring-boot-starter.version>
         <guava.version>23.0</guava.version>
         <commons-lang3.version>3.6</commons-lang3.version>
+        <quartz.version>2.2.1</quartz.version>
     </properties>
 
     <dependencyManagement>
@@ -55,12 +56,12 @@
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
-            <version>2.2.1</version>
+            <version>${quartz.version}</version>
         </dependency>
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz-jobs</artifactId>
-            <version>2.2.1</version>
+            <version>${quartz.version}</version>
         </dependency>
 
         <dependency>
